@@ -59,6 +59,8 @@ class Pizza {
     }
 }
 
+// new + une classe => instance de classe exemple permet à une usine de créer un objet à partir des plans
+
 $pizzaWill = new Pizza('xl', 'tomate', 'mergez', 'mozzarella', 'viande haché');
 $pizzaWill -> pay();
 $pizzaWill -> ship();
