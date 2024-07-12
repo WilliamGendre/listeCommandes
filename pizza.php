@@ -57,6 +57,22 @@ class Pizza {
             $this -> status = "livré";
         }
     }
+
+    public function getSize(){
+        return 'Taille : ' . $this -> size;
+    }
+
+    public function getBase(){
+        return 'Base : ' . $this -> base;
+    }
+
+    public function getIngredients(){ 
+        return 'Ingrédients : ' . $this -> ingredient1 . ' / ' . $this -> ingredient2 . ' / ' . $this -> ingredient3;
+    }
+
+    public function getPrice(){
+        return 'Prix de la pizza : ' . $this -> price . '€';
+    }
 }
 
 // new + une classe => instance de classe exemple permet à une usine de créer un objet à partir des plans
@@ -65,4 +81,9 @@ $pizzaWill = new Pizza('xl', 'tomate', 'mergez', 'mozzarella', 'viande haché');
 $pizzaWill -> pay();
 $pizzaWill -> ship();
 
-var_dump($pizzaWill);
+// var_dump($pizzaWill);
+
+echo $pizzaWill -> getSize() . '<br>';
+echo $pizzaWill -> getBase() . '<br>';
+echo $pizzaWill -> getIngredients() . '<br>';
+echo $pizzaWill -> getPrice() . '<br>';
