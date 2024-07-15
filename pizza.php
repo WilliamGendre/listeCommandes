@@ -4,15 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-class Pizza {
-    private $price;
-    private $status;
-    private $size;
+require_once('./meal.php');
+
+class Pizza extends Meal{
+
     private $base;
     private $ingredient1;
     private $ingredient2;
     private $ingredient3;
-    private $orderedAt;
 
     function __construct($size, $base, $ingredient1, $ingredient2, $ingredient3){
         $this -> status = "en cours de commande";
@@ -39,22 +38,6 @@ class Pizza {
         
         if($size === 'xl'){
             $this -> price = 14;
-        }
-    }
-
-    // fonction pour payé la pizza, à condition qu'une commande soit passer, non payé, non livrer
-
-    public function pay(){
-        if($this -> status === "en cours de commande"){
-            $this -> status = "payé";
-        }
-    }
-
-    // fonction pour livrer la pizza, à condition qu'une commande soit payé
-
-    public function ship(){
-        if($this -> status === "payé"){
-            $this -> status = "livré";
         }
     }
 
